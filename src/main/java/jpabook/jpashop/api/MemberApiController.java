@@ -1,6 +1,5 @@
 package jpabook.jpashop.api;
 
-import jpabook.jpashop.controller.MemberForm;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.service.MemberService;
 import lombok.AllArgsConstructor;
@@ -52,7 +51,7 @@ public class MemberApiController {
     }
 
     @PostMapping("/api/v2/members")
-    public CreateMemberResponse saveMemberV2(@RequestBody @Valid CreaMemberRequest request) {
+    public CreateMemberResponse saveMemberV2(@RequestBody @Valid CreateMemberRequest request) {
 
         Member member = new Member();
         member.setName(request.getName());
@@ -84,7 +83,7 @@ public class MemberApiController {
     }
 
     @Data
-    static class CreaMemberRequest {
+    static class CreateMemberRequest {
         private String name;
     }
 
@@ -96,6 +95,4 @@ public class MemberApiController {
             this.id = id;
         }
     }
-
-
 }
